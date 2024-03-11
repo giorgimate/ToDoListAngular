@@ -1,0 +1,54 @@
+<div class="main-body">
+    <div class="current">
+        <div class="current-header">
+            <div class="p-container">
+            <p class="current-name"> <img class="double-arrow" src="../../assets/images/double_arrow_FILL0_wght400_GRAD0_opsz24 1.svg" alt="">მიმდინარე დავალებები</p>
+            <p class="cur-status">სტატუსი</p>
+           </div>
+        </div>
+        <div class="current-body">
+            <div class="body-list" *ngFor="let item of services.todosnotfinished;">
+                <div class="text-container">
+                    <p class="curstatus-name">{{item.name}}</p>
+                    <p class="stat-name-cur">მიმდინარე</p>
+                </div>
+                <div class="edit-delete">
+                    <div class="edit-icon" [ngClass]="{'icon-background-change':item.id == services.edititem?.id }"   (click)="services.statusedit(item)">
+                        <img src="../../assets/images/onlyediticon.svg" alt="">
+                    </div>
+                    <button class="delete-button" (click)="deleteTask(item.id)">წაშლა</button>
+                    
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <div class="current">
+        <div class="finished-header">
+           <p class="current-name"> <img class="double-arrow" src="../../assets/images/done_all_FILL0_wght400_GRAD0_opsz24 1.svg" alt="">დასრულებული დავალებები</p>
+        </div>
+        <div class="current-body">
+            <div class="body-list"  *ngFor="let item of services.todosfinished">
+                <div class="text-container">
+                <p class="curstatus-name">{{item.name}}</p>
+                <p class="stat-name-finished">დასრულებული</p>
+                </div>
+                <div class="edit-delete">
+                    <div class="edit-icon" [ngClass]="{'icon-background-change':item.id == services.edititem?.id }"  (click)="services.statusedit(item)">
+                        <img src="../../assets/images/onlyediticon.svg" alt="">
+                    </div>
+                    <button class="delete-button" (click)="deleteTask(item.id)">წაშლა</button>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

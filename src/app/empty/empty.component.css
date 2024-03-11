@@ -1,0 +1,24 @@
+.empty-view{
+    height: 150px;
+    background-color: #FAFAFA;
+     margin-top: 34px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.empty-texts{
+text-align: center;
+}
+.main-text{
+    letter-spacing: 5px;
+    color:  #FFADAD;
+    line-height: 26.4px;
+    font-size: 22px;
+    font-weight: 600;
+}
+.second-text{
+    color: #383E59;
+    font-weight: 600;
+    line-height: 21.6px;
+    font-size: 18px;
+}

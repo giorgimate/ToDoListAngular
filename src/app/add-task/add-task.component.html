@@ -1,0 +1,38 @@
+<div class="parent">
+    <div class="group" [ngClass]="services.todosfinished.length ==0 && services.todosnotfinished.length==0?'empty-group':''" 
+  [formGroup]="todoFG"
+    >
+        <div class="add-start" [ngClass]="services.todosfinished.length ==0 && services.todosnotfinished.length==0?'emptyheader':''">
+           <!-- <img src="../../assets/images/addicon.svg" alt="">
+            <p class="add-text">ახალი დავალების დამატება</p>  -->
+            <p class="add-text"><img  [src]="services.isedit?'../../assets/images/editicon.svg':'../../assets/images/addicon.svg'" alt="" > {{services.isedit?"დავალების რედაქტირება":"ახალი დავალების დამატება"}}</p>
+
+
+        </div>
+     
+        <div class="input-name">
+          <p class="input-text" >შეიყვანეთ დასახელება</p>
+          
+          <input type="text"  formControlName="nameControl" class="write-text" />
+
+        </div>
+        <div class="status-name">
+                    <div class="btn-group">
+       <p-dropdown   [options]="statusoptions" formControlName="statuscontrol" optionLabel="label" optionValue="value" placeholder="აირჩიეთ დავალების სტატუსი">
+        <ng-template let-item pTemplate="option">
+          <span [class]="item.color" >
+            {{ item.color === 'green-text' ? item.label + '&nbsp;&nbsp;&nbsp;&gt;' : item.label }}
+          </span>
+        </ng-template>
+      </p-dropdown>
+
+                    
+                    </div>
+        </div>
+        <div class="add-button" (click)="addorupdatetask()">
+          <button class="add-btn"><img class="plus-icon" [src]="services.isedit?'../../assets/images/editicon.svg':'../../assets/images/plusicon.svg'" alt="" > {{services.isedit?"რედაქტირება":"დამატება"}}</button>
+        </div>
+      </div>
+</div>
+
+  

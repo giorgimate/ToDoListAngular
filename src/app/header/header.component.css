@@ -1,0 +1,19 @@
+.header{
+    height: 100px;
+    border-radius: 50px 50px 0px 0px;
+    background-color: #383E59;
+    display: flex;
+    align-items: center;
+}
+.header-text{
+    color: white;
+    font-size: 22px;
+    line-height: 26.4px;
+    font-weight: 600;
+     margin-left: 62px; 
+}
+
+
+
+
+

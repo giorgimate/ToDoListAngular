@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Services } from './Services.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(public service:Services ){
+    
+  }
+  onGetToDoes(){
+    this.service.GetToDo()
+  }
+  ngOnInit(){
+    this.onGetToDoes()
+  }
   title = 'ToDoList';
 }
